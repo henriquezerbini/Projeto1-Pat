@@ -13,3 +13,6 @@ http.createServer( function(request, response){
 
 //sempre que myudar precisa dar um restart no server
 // se mudar um html css nao precisa MAS NO SERVIDO SIM !!!!!!!
+
+
+//nodemon ele sozinho faz refresh -- npm -g nodemon
