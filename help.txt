@@ -1,0 +1,36 @@
+git clone link
+git clone https://github.com/henriquezerbini/Projeto1-Pat.git
+
+
+no cmd
+node hello.js
+localhost: porta
+
+serviçoDeUsuario - > coloca todas funcionalidades relacionadas com usuario
+não colocar coisas juntas (que nao se relacionam)
+
+
+
+
+criar banco de dados no 000webhost
+
+
+
+backlog
+as sprints futura
+
+to do
+oq vai fazer na proxima semana
+to do, in progress e done a sprint atual
+
+
+sprint1
+acabou done move pra ca sprintf finalizada
+
+
+TO DO PROXIMA SEMANA:
+MODELO DE DADOS
+DESCRIÇÃO DO PROJETO
+
+backlog proximo passo
+criaçã do BD mas tentar jogar pro TODO
