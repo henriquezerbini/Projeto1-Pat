@@ -26,8 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 /*----------------------------------------------------------------
                           ROTAS
 ----------------------------------------------------------------*/
-app.use('/', './routes/index');
-app.use('/users', './routes/users');
+var indexRouter = require('./routes/index');
+app.use('/', indexRouter);
+
+var usersRouter = require('./routes/users');
+app.use('/users', usersRouter);
 /*----------------------------------------------------------------
                         CRIAR SESSION
 -----------------------------------------------------------------*/
