@@ -1,8 +1,12 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+.sizeBoxLogin{
+    margin: auto;
+    width: 540px;
+    border: 2px solid #007bff;
+    height: 160px;
 }
 
-a {
-  color: #00B7FF;
+.sizeBoxSignUp{
+    margin: auto;
+    width:540px;
 }
