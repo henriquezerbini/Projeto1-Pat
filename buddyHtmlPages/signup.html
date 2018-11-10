@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignUp</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/singupJS"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="sizeBoxSignUp">
+    <form class="text-primary form-text needs-validation">
+        <div class="row">
+                <div class="col border-left border-primary">
+                    Nome:<br>
+                    <input class="form-control" type="text" placeholder="name" required>
+                    Email:<br>
+                    <input class="form-control" type="email" placeholder="blabla123@adaba.com" required>
+                    Username:<br>
+                    <input class="form-control" type="text" placeholder="username" required>
+                    <small class="text-muted">Insira um nome que contenha pelo menos 8 caracteres, e sem
+                        espaco.</small><br>
+                    Idade:<br>
+                    <input class="form-control" type="number" placeholder="age" required>
+                    Password:<br>
+                    <input class="form-control" type="password" placeholder="password" required>
+                    <small class="text-muted">Insira uma senha que contenha entre 8 à 16 caracteres.</small><br>
+                    Confirmar Password:<br>
+                    <input class="form-control" type="password" placeholder="confirmPassword" required>
+
+                    <input type="checkbox" required>
+                    <label class="form-check-label"><small>Aceitar termos de uso.</small></label>
+
+                    <button type="submit" class="btn btn-success">Cadastrar-se</button>
+                </div>
+                <div class="col bg-info text-light form-text">
+                    <div class="row">
+                        <label class="col-2 col-form-label">pais:</label>
+                        <input class="form-control-plaintext col-10 text-light" type="text" value="Brasil" readonly>
+                    </div>
+                    Estado:<br>
+                    <select class="form-control" id="estado" name="estado" required>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                    Cidade:<br>
+                    <input class="form-control" type="text" value="cidade" required>
+                    Bairro:<br>
+                    <input class="form-control" type="text" value="bairro" required>
+                    CEP:<br>
+                    <input class="form-control" type="number" value="cep" required><br>
+                    <img class="img-fluid" src="./img/teste.png">
+                </div>
+        </div>
+    </form>
+    </div>
+</body>
+
+</html>
