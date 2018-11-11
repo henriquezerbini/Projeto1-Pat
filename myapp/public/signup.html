@@ -24,11 +24,12 @@
             <div class="row">
                 <div class="col border-left border-primary">
                     Nome:<br>
-                    <input class="form-control" type="text" name="nome" placeholder="name" required>
+                    <input class="form-control" type="text" name="nome" placeholder="name" pattern="[\w\W" required>
                     Email:<br>
                     <input class="form-control" type="email" name="email" placeholder="blabla123@adaba.com" required>
                     Username:<br>
-                    <input class="form-control" type="text" name="username" placeholder="username" required>
+                    <input class="form-control" type="text" name="username" placeholder="username" pattern="[A-z\d]{8,16}"
+                        required>
                     <small class="text-muted">Insira um nome que contenha pelo menos 8 caracteres, e sem
                         espaco.</small><br>
                     Idade:<br>
@@ -39,12 +40,11 @@
                     Confirmar Password:<br>
                     <input class="form-control" type="password" name="confirmPassword" placeholder="confirmPassword"
                         required>
-
                     <input type="checkbox" required>
                     <label class="form-check-label"><small>Aceitar termos de uso.</small></label>
-
-                    <button type="submit" class="btn btn-success">Cadastrar-se</button>
+                    <button type="submit" class="btn btn-success" onclick="cadastraCliente()">Cadastrar-se</button>
                 </div>
+
                 <div class="col bg-info text-light form-text">
                     <div class="row">
                         <label class="col-2 col-form-label">pais:</label>
@@ -52,7 +52,7 @@
                             readonly>
                     </div>
                     Estado:<br>
-                    <select class="form-control" id="estado" name="estado" required>
+                    <select class="form-control" id="estado" placeholder="estado" required>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>
@@ -82,11 +82,11 @@
                         <option value="TO">Tocantins</option>
                     </select>
                     Cidade:<br>
-                    <input class="form-control" type="text" name="cidade" value="cidade" required>
+                    <input class="form-control" type="text" name="cidade" placeholder="cidade" required>
                     Bairro:<br>
-                    <input class="form-control" type="text" name="bairro" value="bairro" required>
+                    <input class="form-control" type="text" name="bairro" placeholder="bairro" required>
                     CEP:<br>
-                    <input class="form-control" type="number" name="cep" value="cep" required><br>
+                    <input class="form-control" type="text" name="cep" placeholder="cep" pattern="\d{8}" title="CEP deve apenas conter 8 numeros, sem -!!!!" required><br>
                     <img class="img-fluid" src="images/teste.png">
                 </div>
             </div>
