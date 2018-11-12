@@ -24,14 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 /*----------------------------------------------------------------
-                          ROTAS
-----------------------------------------------------------------*/
-var indexRouter = require('./routes/index');
-app.use('/', indexRouter);
-
-var usersRouter = require('./routes/users');
-app.use('/users', usersRouter);
-/*----------------------------------------------------------------
                         CRIAR SESSION
 -----------------------------------------------------------------*/
 app.use(expressSession({
@@ -45,13 +37,25 @@ app.use(expressSession({
 ----------------------------------------------------------------*/
 app.use(
   connection(mysql, {
-    host: 'sql10.freemysqlhosting.net', // servidor do banco mysql, se for local: localhost
-    user: 'sql110263389', //usuario com permissao de conexao a BD
-    password: 'wRimM2EhX3', // senha de acesso ao BD
-    port: 3306,// porta do mysql, normalmente 3306
-    database: 'sql10263389'//nome da base de dados (esquema)
+    host: 'sql10.freemysqlhosting.net'
+    , //servidor do banco mysql, se for local: localhost,
+    user: 'sql10263389'
+    , //usuario com permissao de conexao a base de dados
+    password: 'wRimM2EhX3'
+    , //senha de acesso ao banco
+    port: 3306, //porta do mysql, normalmente 3306
+    database: 'sql10263389' //nome da base de dados (esquema)
   }, 'pool')
 );
+/*----------------------------------------------------------------
+                          ROTAS
+----------------------------------------------------------------*/
+var animalRouter = require('./routes/animal');
+app.use('/animal', animalRouter);
+
+var usuarioRouter = require('./routes/usuario');
+app.use('/usuario', usuarioRouter);
+
 /*--------------------------------------------------------------*/
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

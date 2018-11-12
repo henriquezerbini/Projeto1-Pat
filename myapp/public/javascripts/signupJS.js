@@ -1,46 +1,35 @@
-// teste
-// (function () {
-//     'use strict';
-//     window.addEventListener('load', function () {
-//         // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//         var forms = document.getElementsByClassName('needs-validation');
-//         // Loop over them and prevent submission
-//         var validation = Array.prototype.filter.call(forms, function (form) {
-//             form.addEventListener('submit', function (event) {
-//                 if (form.checkValidity() === false) {
-//                     event.preventDefault();
-//                     event.stopPropagation();
-//                 }
-//                 form.classList.add('was-validated');
-//             }, false);
-//         });
-//     }, false);
-// })();
-
-function cadastraCliente() {
+function cadastraUsuario() {
     var form = document.formSignup;
     var input = {
         nome: form.nome.value,
-        email: form.email.value,
-        username: form.username.value,
         idade: form.idade.value,
-        pais: form.pais.value,
-        estado: form.estado.value,
-        cidade: form.cidade.value,
+        user: form.username.value,
+        email: form.email.value,
+        senha: form.password.value,
         bairro: form.bairro.value,
-        cep: form.cep.value
+        cep: form.cep.value,
+        cidade: form.cidade.value,
+        estado: form.estado.value,
+        pais: form.pais.value,
+        privilegio: 'normal',
+        fotoPerfil: '/jaru.png'
     };
-
     $.ajax({
-        url: '/cadastraCliente',
+        url: '/usuario/cadastraUsuario',
         type: 'post',
         data: input,
         error: function (dados) {
-            alert('Erro:' + dados.data);
+            alert('Erro1: ' + dados.data);
         },
-        sucess: function (dados) {
-            if (dados.status === 'ERRO') alert('Erro: ' + dados.data);
-            else alert(dados.data);
+        success: function (dados) {
+            if (dados.status === 'ERRO') {
+                alert('Erro2: ' + dados.data);
+                $("#alertaLogin").addClass("show");
+                $("#alertaLogin").removeClass("close");
+            }
+            else {
+                window.location.href = '/index.html';
+            }
         }
     });
 }
