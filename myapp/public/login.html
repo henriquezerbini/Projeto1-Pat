@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+   
+    <script src="javascripts/login.js"></script>
+
+
+    <title>Login</title>
+</head>
+
+<body>
+    <header class="container-fluid topo">
+        <nav class="container nav">
+            <img src="images/logo.png" class="mx-auto my-2 m-md-3 ">
+            <div class="row align-items-center w-75 mx-auto ">
+                <div class="col-12 col-md-8 p-0">
+                    <form title="buscar">
+                        <div class="input-group">
+                            <input type="text" class="form-control rounded-0 classOutline" placeholder="Pesquisar">
+                            <div class="input-group-append">
+                                <button class="input-group-text rounded-0 btn-light"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-12 col-md-4 text-white text-center text-md-left">
+                    <a href="#" class="text-white">Login</a> | <a href="#" class="text-white">Cadastro</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="navbar-expand-sm corAmarelo">
+        <button class="d-sm-none menuButton fas fa-bars" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação"></button>
+        <span class="d-sm-none h1">Menu</span>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto container">
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Pagina Inicial</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Animais</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#a">Urgência</a> </li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container center">
+
+                <div class="alert alert-dismissible alertaCorpo fade close" id="alertaLogin">
+                <span>Erro!</span> Login Invalido.
+                <button type="button" data-dismiss="alert">&times;</button>
+  </div>
+    </div>
+    <div class="sizeBoxLogin">
+            <form name="formLogin" method="post">
+                <div class="ml-3 mt-4">
+                    <div class="row">
+                        <div class="col">
+                            User:<br>
+                            <input type="text" name="user"> <br>
+                            Senha:<br>
+                            <input type="password" name="senha"> <br>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" onclick="logar();">Login</button>
+                            <button type="button" class="btn btn-secondary">Sign in</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+    <footer class="footer position-absolute">
+        <div class="container">
+            2018
+        </div>
+
+    </footer>
+
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    
+</body>
+
+</html>

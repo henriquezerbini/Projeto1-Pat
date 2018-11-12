@@ -28,6 +28,7 @@ function cadastraUsuario() {
                 $("#alertaLogin").removeClass("close");
             }
             else {
+                alert("Cadastro foi feito com sucesso!!!!");
                 window.location.href = '/index.html';
             }
         }
