@@ -15,17 +15,17 @@
     <script src="javascripts/bootstrap.min.js"></script>
 
     <script src="javascripts/login.js"></script>
-
+    <script src="javascripts/cadastroAnimalJS.js"></script>
 
     <title>cadastroCachorro</title>
 </head>
 
 <body>
     <header class="container-fluid topo">
-        <nav class="container nav">
+        <nav class="container ngn-items-center w-75 mx-auto ">
+                <div class="coav">
             <img src="images/logo.png" class="mx-auto my-2 m-md-3 ">
-            <div class="row align-items-center w-75 mx-auto ">
-                <div class="col-12 col-md-8 p-0">
+            <div class="row alil-12 col-md-8 p-0">
                     <form title="buscar">
                         <div class="input-group">
                             <input type="text" class="form-control rounded-0 classOutline" placeholder="Pesquisar">
@@ -58,46 +58,41 @@
     <form name="formSignup" class="text-primary form-text needs-validation ml-5 mr-5" method="POST">
         <div class="form-group">
             Nome do Bichinho:
-            <input type="text" class="form-control" id="nomeAnimal" placeholder="nome">
+            <input type="text" class="form-control" name="nomeAnimal" placeholder="nome">
         </div>
         <div class="form-group">
             Idade:
-            <input type="text" class="form-control" id="idadeAnimal" placeholder="idade" pattern="[0-9]|?">
+            <input type="text" class="form-control" name="idadeAnimal" placeholder="idade" pattern="[0-9]|?">
         </div>
         <div class="form-group">
             Tipo:
-            <input type="text" class="form-control" id="tipoAnimal" placeholder="gato, cachorro, iguana ou etc.">
+            <input type="text" class="form-control" name="tipoAnimal" placeholder="gato, cachorro, iguana ou etc.">
         </div>
         <div class="form-group">
             Raça:
-            <input type="text" class="form-control" id="racaAnimal" placeholder="Raça do amigo" pattern="">
+            <input type="text" class="form-control" name="racaAnimal" placeholder="Raça do amigo">
         </div>
 
         <div class="form-group">
             Sexo:<br>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="machoAnimal" value="Masculino">
+                <input class="form-check-input" type="radio" name="sexoAnimal" id="machoAnimal" value="Masculino">
                 <label class="form-check-label" for="inlineRadio1">Macho</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femeaAnimal" value="Feminino">
+                <input class="form-check-input" type="radio" name="sexoAnimal" id="femeaAnimal" value="Feminino">
                 <label class="form-check-label" for="inlineRadio2">Femea</label>
             </div>
         </div>
         <div class="form-group">
             Cor:
-            <input type="color" class="form-control" id="colorAnimal">
+            <input type="color" class="form-control" name="corAnimal">
         </div>
         <div class="form-group">
             Situacao:
-            <input type="text" class="form-control" id="colorAnimal">
+            <input type="text" class="form-control" name="situacaoAnimal">
         </div>
-        <div class="form-group">
-            Foto:
-            <input type="file" id="fotoAnimal">
-        </div>
-
-        <button type="submit" class="btn btn-success">Cadastrar amigo</button>
+        <button type="button" class="btn btn-success" onclick="cadastraAnimal();">Cadastrar amigo</button>
     </form>
 
 </body>
