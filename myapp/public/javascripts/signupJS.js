@@ -14,24 +14,37 @@ function cadastraUsuario() {
         privilegio: 'normal',
         fotoPerfil: '/jaru.png'
     };
-    $.ajax({
-        url: '/usuario/cadastraUsuario',
-        type: 'post',
-        data: input,
-        error: function (dados) {
-            alert('Erro1: ' + dados.data);
-        },
-        success: function (dados) {
-            if (dados.status === 'ERRO') {
-                alert('Erro2: ' + dados.data);
-                $("#alertaLogin").addClass("show");
-                $("#alertaLogin").removeClass("close");
+    if (form.confirmPassword.value === form.password.value) {
+        $.ajax({
+            url: '/usuario/cadastraUsuario',
+            type: 'post',
+            data: input,
+            error: function (dados) {
+                alert('Erro1: ' + dados.data);
+            },
+            success: function (dados) {
+                if (dados.status === 'ERRO') {
+                    alert('Erro2: ' + dados.data);
+                    $("#alertaLogin").addClass("show");
+                    $("#alertaLogin").removeClass("close");
+                }
+                else if(dados.status === 'USERUSADO')
+                {
+                    alert('O usuario fornecido ja esta em uso!!!');
+                }
+                else if(dados.status === 'EMAILUSADO')
+                {
+                    alert('O email fornecido ja esta em uso!!!');
+                }
+                else {
+                    alert("Cadastro foi feito com sucesso!!!!");
+                    window.location.href = '/index.html';
+                }
             }
-            else {
-                alert("Cadastro foi feito com sucesso!!!!");
-                window.location.href = '/index.html';
-            }
-        }
-    });
+        });
+    }
+    else{
+        alert("As senhas fornecidas nao sao iguais!!!");
+    }
 }
 

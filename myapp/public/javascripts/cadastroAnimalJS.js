@@ -24,6 +24,10 @@ function cadastraAnimal() {
                 $("#alertaLogin").addClass("show");
                 $("#alertaLogin").removeClass("close");
             }
+            else if(dados.status === 'SEMACESSO'){
+                alert("Voce precisa estar logado para efetuar essa operacao!!!");
+                window.location.href = '/login.html';
+            }
             else {
                 alert("Cadastro foi feito com sucesso!!!!");
                 window.location.href = '/index.html';
