@@ -23,6 +23,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+global.__basedir = __dirname; // cria uma variavel global que mostra qual eh o dir raiz
 /*----------------------------------------------------------------
                         CRIAR SESSION
 -----------------------------------------------------------------*/

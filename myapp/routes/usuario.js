@@ -1,6 +1,24 @@
 var express = require('express');
-var router = express.Router();
+var formidable = require('formidable');
+var fs = require('fs');
 
+var router = express.Router();
+/*------------------------------------------------------
+                UPLOAD IMG
+------------------------------------------------------*/
+router.post('/upload', function (req, res, next) {
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+        var oldpath = files.fileToUpload.path;
+        var newpath = __basedir + "/public/images/uploads/userImages/"+ files.fileToUpload.name;
+        console.log(newpath);
+        fs.rename(oldpath, newpath, function (err) {
+            if (err) throw err;
+            res.write('File uploaded and moved!');
+            res.end();
+        });
+    });
+});
 /*-------------------------------------------------------
                     CADASTRO
 --------------------------------------------------------*/
@@ -32,8 +50,8 @@ router.post('/cadastraUsuario', function (req, res, next) {
                             }
                         });
                     }
-                    else{
-                        res.json({status:'EMAILUSADO', data:+err2});
+                    else {
+                        res.json({ status: 'EMAILUSADO', data: +err2 });
                     }
                 });
             }
