@@ -18,6 +18,7 @@
 
     <script src="javascripts/signupJS.js"></script>
     <script src="javascripts/login.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
     </nav>
 
     <div class="sizeBoxSignUp">
-        <form name="formSignup" class="text-primary form-text needs-validation" method="POST">
+        <form name="formSignup" class="text-primary form-text needs-validation" onsubmit="cadastraUsuario();" method="POST">
             <div class="row">
                 <div class="col border-left border-primary">
                     Nome:<br>
@@ -80,7 +81,7 @@
                         required>
                     <input type="checkbox" required>
                     <label class="form-check-label"><small>Aceitar termos de uso.</small></label>
-                    <button type="button" class="btn btn-success" onclick="cadastraUsuario();">Cadastrar-se</button>
+                    <button type="submit" class="btn btn-success">Cadastrar-se</button>
                 </div>
 
                 <div class="col bg-info text-light form-text">

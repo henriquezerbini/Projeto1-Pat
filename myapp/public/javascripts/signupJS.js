@@ -28,12 +28,10 @@ function cadastraUsuario() {
                     $("#alertaLogin").addClass("show");
                     $("#alertaLogin").removeClass("close");
                 }
-                else if(dados.status === 'USERUSADO')
-                {
+                else if (dados.status === 'USERUSADO') {
                     alert('O usuario fornecido ja esta em uso!!!');
                 }
-                else if(dados.status === 'EMAILUSADO')
-                {
+                else if (dados.status === 'EMAILUSADO') {
                     alert('O email fornecido ja esta em uso!!!');
                 }
                 else {
@@ -43,8 +41,7 @@ function cadastraUsuario() {
             }
         });
     }
-    else{
+    else {
         alert("As senhas fornecidas nao sao iguais!!!");
     }
 }
-
