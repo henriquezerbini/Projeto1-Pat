@@ -1,23 +1,36 @@
 var express = require('express');
 var formidable = require('formidable');
 var fs = require('fs');
+var path = require('path');
 
 var router = express.Router();
 /*------------------------------------------------------
                 UPLOAD IMG
 ------------------------------------------------------*/
 router.post('/upload', function (req, res, next) {
-    var form = new formidable.IncomingForm();
-    form.parse(req, function (err, fields, files) {
-        var oldpath = files.fileToUpload.path;
-        var newpath = __basedir + "/public/images/uploads/userImages/"+ files.fileToUpload.name;
-        console.log(newpath);
-        fs.rename(oldpath, newpath, function (err) {
-            if (err) throw err;
-            res.write('File uploaded and moved!');
-            res.end();
+    if (req.session.logado) {
+        var form = new formidable.IncomingForm();
+        form.parse(req, function (err, fields, files) {
+            var oldpath = files.fileToUpload.path;
+            
+            var ext = path.extname(files.fileToUpload.name);//pega a extensao do arquivo
+            console.log(ext);
+
+            var newpath = __basedir + "/public/images/uploads/userImages/" + "1" + ext;
+            console.log(newpath);
+            fs.rename(oldpath, newpath, function (err) {
+                if (err) {
+                    res.json({ status: 'ERRO', data: +err });
+                }
+                else {
+                    res.json({ status: 'OK', data: 'upload feito com sucesso!!!' });
+                }
+            });
         });
-    });
+    }
+    else {
+        res.json({ status: 'SEMACESSO', data: 'Usuario precisa estar logado!!!' });
+    }
 });
 /*-------------------------------------------------------
                     CADASTRO
