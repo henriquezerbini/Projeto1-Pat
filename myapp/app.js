@@ -11,7 +11,9 @@ var sqliteStore = require('connect-sqlite3')(expressSession);
 var connection = require('express-myconnection');
 var mysql = require('mysql');
 
+
 var app = express();
+
 /*----------------------------------------------------------------
                       Engine Setup
 ----------------------------------------------------------------*/
@@ -23,8 +25,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 /*----------------------------------------------------------------
-                        CRIAR SESSION
+                        Criar Session
 -----------------------------------------------------------------*/
 app.use(expressSession({
   store: new sqliteStore,
@@ -48,7 +52,7 @@ app.use(
   }, 'pool')
 );
 /*----------------------------------------------------------------
-                          ROTAS
+                          Rotas
 ----------------------------------------------------------------*/
 var animalRouter = require('./routes/animal');
 app.use('/animal', animalRouter);

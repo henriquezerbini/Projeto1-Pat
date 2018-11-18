@@ -30,7 +30,25 @@ a:hover{
     padding-bottom: 5px;
 
 }
+.amareloBG{
+    background-color: #fdcd56;
+    
+}
+.azulBG{
+    background-color: #79bfed;
+    
+}
+.vermelhoBG{
+    background-color: #d25561;
+    
+}
+.verdeBG{
+    background-color: #afd265;
+    
+}
 
+    
+    
 .menuButton{
     background-color: transparent;
     color: black;
@@ -154,6 +172,16 @@ button:hover .heart{
     color: #ec2f42;
 
 }
+.botaoBottom{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
 
 .tipoCachorro{
     background-color: #d25561;
@@ -281,3 +309,89 @@ a:hover.tipoCategoria{
 }
 
 
+/* painel de admin */
+
+.menuAdmin{
+    width: 100%;
+    background-color: #fdcd56;
+    border-bottom: 1px solid #bc973b;
+    padding: 10px;
+
+
+}
+
+.boxNotificacao{
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+
+    margin: 5px;
+    color: white;
+}
+.numeroBox{
+
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.20);
+    margin-left: 5px;
+    font-size:30px;  
+}
+.menuAdminLink{
+   color: #818181;
+    padding: 5px 5px;
+    border-bottom: 1px solid #818181;
+    display: block;
+     width: 100%;
+     -webkit-transition:all  ease-out 200ms;
+     transition:all  ease-out 200ms;
+    
+}
+.menuAdminLink:hover{
+    padding-left: 20px;
+
+    -webkit-transition:all  ease-out 200ms;
+    transition:all  ease-out 200ms;
+
+}
+#conteudoNavbarSuportado2{
+    margin-right: 10px;
+    padding: 5px;
+        -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    
+}
+.sidebarAdmin{
+    background-color: #292929;
+    padding: 10px;
+    color: white;
+    height: 100%;
+}
+
+#adminBarBV{
+    float: right;
+    margin-right: 10px;
+}
+#conteudoAdmin{
+    padding: 10px;
+
+}
+
+
+/* comentarios */
+.comentarioSrc{
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    background-color: rgb(236, 236, 236);
+    padding: 10px;
+    border: 1px solid rgb(185, 185, 185);
+
+}
+.comentarioSrc #comentarioSrcTexto{
+    border-left: 1px solid rgb(148, 148, 148);
+    height: 100%;
+    padding-left: 10px;
+
+}
+#comentarioImg{
+    height: 100%;
+
+}

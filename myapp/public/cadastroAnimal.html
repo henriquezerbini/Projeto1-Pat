@@ -53,42 +53,59 @@
 
         </div>
     </nav>
-    <form name="formSignup" class="text-primary form-text needs-validation ml-5 mr-5" method="POST">
-        <div class="form-group">
-            Nome do Bichinho:
-            <input type="text" class="form-control" name="nomeAnimal" placeholder="nome">
-        </div>
-        <div class="form-group">
-            Idade:
-            <input type="text" class="form-control" name="idadeAnimal" placeholder="idade" pattern="[0-9]|?">
-        </div>
-        <div class="form-group">
-            Tipo:
-            <input type="text" class="form-control" name="tipoAnimal" placeholder="gato, cachorro, iguana ou etc.">
-        </div>
-        <div class="form-group">
-            Raça:
-            <input type="text" class="form-control" name="racaAnimal" placeholder="Raça do amigo">
-        </div>
-
-        <div class="form-group">
-            Sexo:<br>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="sexoAnimal" id="machoAnimal" value="Masculino">
-                <label class="form-check-label" for="inlineRadio1">Macho</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="sexoAnimal" id="femeaAnimal" value="Feminino">
-                <label class="form-check-label" for="inlineRadio2">Femea</label>
-            </div>
-        </div>
-        <div class="form-group">
-            Cor:
-            <input type="color" class="form-control" name="corAnimal">
-        </div>
-        <div class="form-group">
-            Situacao:
-            <input type="text" class="form-control" name="situacaoAnimal">
+    <form name="formSignup" class="needs-validation container"  novalidate enctype="multipart/form-data">
+        <h1>Cadastro de Animal</h1>
+        <div class="form-row">
+                <div class="form-group col-md-8">
+                        Nome do Bischinho:
+                        <input type="text" class="form-control" name="nomeAnimal" placeholder="Nome" required>
+                        <div class="invalid-feedback">
+                                Por favor, informe uma cidade válida.
+                              </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        Idade:
+                        <input type="number" class="form-control" name="idadeAnimal" placeholder="Idade em anos" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        Tipo:
+                        <input type="text" class="form-control" name="tipoAnimal" placeholder="Gato, Cachorro, Aves e outros" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        Raça:
+                        <input type="text" class="form-control" name="racaAnimal" placeholder="Raça do animal">
+                    </div>
+            
+                    <div class="form-group col-md-4">
+                        Sexo:<br>
+                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Sexo</label>
+                        <select class="custom-select mr-sm-2"name="sexoAnimal">
+                        <option value="estadoInvalido" selected disabled>Selecione o sexo do animal</option>
+                          <option value="M">Macho</option>
+                          <option value="F">Femea</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        Cor:
+                        <input type="text" class="form-control" name="corAnimal">
+                    </div>
+                    <div class="form-group col-md-4">
+                        Situacao:
+                        <input type="text" class="form-control" name="situacaoAnimal">
+                    </div>
+                    <div class="form-group col-md-12">
+                        Descrição
+                            <textarea placeholder="Digite a descrição do animal" class="form-control"  name="descricao" required maxlength="700"></textarea>
+                    </div>
+                    <div class="form-group col-md-12" >
+                        Upload de Foto
+                        <div id="fotosAba">
+                                <input type="file" name="fotos0" class="form-control-file" accept="image/*" >
+                        </div>
+                        <button type="button" class="btn btn-success" onclick="foto();">Inserir nova foto</button>
+                           
+                        </div>
+                      
         </div>
         <button type="button" class="btn btn-success" onclick="cadastraAnimal();">Cadastrar amigo</button>
     </form>

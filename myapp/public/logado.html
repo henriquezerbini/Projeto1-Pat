@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+        <script src="javascripts/admin.js"></script>
+
+
+    <title>Olá, mundo!</title>
+</head>
+
+<body>
+ <section class="">
+       <nav class="menuAdmin">
+            <button class="menuButton fas fa-bars" type="button" onclick="showMenu();"></button>
+            <img src="images/logo.png" class="ml-2" height="30px;">
+            <div id="adminBarBV">
+                Bem vindo Fulano
+                <img src="images/profile.jpg" class="rounded-circle border border-dark" height="30px;">
+            </div>
+     
+       </nav>
+        <section>
+            <div class="row no-gutters">
+                <div class="col-md-3 col-12 " id="menuAdmin">
+                     <nav class="navbar-expand-md sidebarAdmin ">
+              <span class="h4">Configurações</span>
+                <div class="" id="conteudoNavbarSuportado2">
+                    <ul class="nav flex-column w-100">
+                        <a href="#"><li class="nav-item menuAdminLink">Perfil </li></a>
+                        <a href="#"><li class="nav-item menuAdminLink">Animais Cadastrados </li></a>
+                       <a href="#a"> <li class="nav-item menuAdminLink">Intenções de Adoção Feitas</li></a> 
+                       <a href="#a"> <li class="nav-item menuAdminLink">Intenções de Adoção Recebidas</li></a> 
+                       <a href="#a"> <li class="nav-item menuAdminLink">Logout</li></a> 
+                    </ul>
+
+                </div>
+            </nav>
+        
+                </div>
+                <div class="col-md-9 col-12" id="conteudoAdmin">
+
+                   <h4 >Situação das intenções de adoção</h4>
+                    <div class="row no-gutters">
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <a href="animalPagina.html">
+                                <div class="boxNotificacao azulBG">
+                                    <span id="numeroIntencoes" class="numeroBox">1</span>
+                                    Intenções de adoções
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <a href="animalPagina.html">
+                                <div class="boxNotificacao verdeBG">
+                                    <span id="numeroIntencoesAprovadas" class="numeroBox">1</span>
+                                    Intenções solicitadas
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <a href="animalPagina.html">
+                                <div class="boxNotificacao vermelhoBG">
+                                    <span id="numeroIntencoes" class="numeroBox">1</span>
+                                    Intenções de adoções
+                                </div>
+                            </a>
+                        </div>
+
+                        <section class="mt-3">
+                                <h2 class="float-left d-block">Últimos cadastros</h2>
+                                <a href="#" class="tipoCategoria float-right">Todos Animais</a>
+                                <div class=" clearfix"></div>
+                                <div class="row no-gutters mt-2">
+                                    <div class="col-lg-2 col-md-4 col-6">
+                                        <a href="animalPagina.html">
+                                            <div class="animalBox">
+                                                <img src="images/pp.jpg">
+                                                <div class="animalBoxTexto">
+                                                    <b>Sexo: </b><span>Femea</span><br>
+                                                    <b>Idade: </b><span>80 anos</span><br>
+                                                    <span class="tipoCategoria tipoCachorro">Cachorro</span>
+                                                    <span class="tipoCategoria tipoUrgente">Urgente</span>
+                                                    <span class="tipoCategoria float-right">+</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-6">
+                                        <a href="#">
+                                            <div class="animalBox">
+                                                <img src="images/pp.jpg">
+                                                <div class="animalBoxTexto">
+                                                    <b>Sexo: </b><span>Femea</span><br>
+                                                    <b>Idade: </b><span>80 anos</span><br>
+                                                    <span class="tipoCategoria tipoGato">Gato</span>
+                                                    <span class="tipoCategoria float-right">+</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-6">
+                                        <a href="#">
+                                            <div class="animalBox">
+                                                <img src="images/pp.jpg">
+                                                <div class="animalBoxTexto">
+                                                    <b>Sexo: </b><span>Femea</span><br>
+                                                    <b>Idade: </b><span>80 anos</span><br>
+                                                    <span class="tipoCategoria tipoAves">Aves</span>
+                                                    <span class="tipoCategoria tipoUrgente">Urgente</span>
+                                                    <span class="tipoCategoria float-right">+</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-6">
+                                        <a href="#">
+                                            <div class="animalBox">
+                                                <img src="images/pp.jpg">
+                                                <div class="animalBoxTexto">
+                                                    <b>Sexo: </b><span>Femea</span><br>
+                                                    <b>Idade: </b><span>80 anos</span><br>
+                                                    <span class="tipoCategoria tipoOutros">Outros</span>
+                                                    <span class="tipoCategoria float-right">+</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-6">
+                                        <a href="#">
+                                            <div class="animalBox">
+                                                <img src="images/pp.jpg">
+                                                <div class="animalBoxTexto">
+                                                    <b>Sexo: </b><span>Femea</span><br>
+                                                    <b>Idade: </b><span>80 anos</span><br>
+                                                    <span class="tipoCategoria tipoOutros">Outros</span>
+                                                    <span class="tipoCategoria float-right">+</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-6">
+                                        <a href="#">
+                                            <div class="animalBox">
+                                                <img src="images/pp.jpg">
+                                                <div class="animalBoxTexto">
+                                                    <b>Sexo: </b><span>Femea</span><br>
+                                                    <b>Idade: </b><span>80 anos</span><br>
+                                                    <span class="tipoCategoria tipoCachorro">Cachorro</span>
+                                                    <span class="tipoCategoria float-right">+</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            2018
+        </div>
+
+    </footer>
+
+    <!-- JavaScript (Opcional) -->
+
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+
+</body>
+
+</html>

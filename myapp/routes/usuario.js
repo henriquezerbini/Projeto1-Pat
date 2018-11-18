@@ -67,10 +67,10 @@ router.post('/login', function (req, res, next) {
                     });
                 }
                 else {
-                    console.log("kkk");
+                    console.log(rows[0]);
                     req.session.logado = true;
                     req.session.admin = true;
-                    req.session.login = input.login;
+                    req.session.login = rows[0].idUsuario;
                     res.json({
                         status: 'OK', data: 'Logado com sucesso!'
                     });
