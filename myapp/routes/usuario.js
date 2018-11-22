@@ -1,6 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'sitebuddy.mail@gmail.com',
+    pass: 'jarubrocha'
+  }
+});
+
+
 /*-------------------------------------------------------
                     CADASTRO
 --------------------------------------------------------*/
@@ -26,9 +37,21 @@ router.post('/cadastraUsuario', function (req, res, next) {
                                 console.log("Erro ao cadastrar o usuario!!!!");
                             }
                             else {
-
-                                res.json({ status: 'OK', data: 'Incluido com sucesso!' });
-                                console.log("Usuario inserido com sucesso!!!");
+                                var mailOptions = {
+                                    from: 'sitebuddy.mail@gmail.com',
+                                    to: input.email,
+                                    subject: 'Cadastro no BUDDY!!!!!',
+                                    text: 'Óla, ' + input.nome +'!!!!\n Bem vindo ao buddy '
+                                  };
+                                  transporter.sendMail(mailOptions, function(error, info){
+                                    if (error) {
+                                      console.log(error);
+                                    } else {
+                                      console.log('Email sent: ' + info.response);
+                                    }
+                                  });
+                                  res.json({ status: 'OK', data: 'Incluido com sucesso!' });
+                                  console.log("Usuario inserido com sucesso!!!");
                             }
                         });
                     }
