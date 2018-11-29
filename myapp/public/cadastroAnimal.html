@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/header.js"></script>
     <script src="javascripts/cadastroAnimalJS.js"></script>
 
-    <title>cadastroCachorro</title>
+    <title>Buddy - Cadastro de Animal</title>
 </head>
 
 <body>
     <header class="container-fluid topo">
-        <nav class="container ngn-items-center w-75 mx-auto ">
-                <div class="coav">
-            <img src="images/logo.png" class="mx-auto my-2 m-md-3 ">
-            <div class="row alil-12 col-md-8 p-0">
+        <nav class="container nav">
+            <a href="/index.html"><img src="images/logo.png" class="mx-auto my-2 m-md-3 "></a>
+            <div class="row align-items-center w-75 mx-auto ">
+                <div class="col-12 col-md-8 p-0">
                     <form title="buscar">
                         <div class="input-group">
                             <input type="text" class="form-control rounded-0 classOutline" placeholder="Pesquisar">
@@ -34,8 +35,8 @@
 
                     </form>
                 </div>
-                <div class="col-12 col-md-4 text-white text-center text-md-left">
-
+                <div class="col-12 col-md-4 text-white text-center text-md-left" id="loginBar">
+                    
                 </div>
             </div>
         </nav>
@@ -46,49 +47,69 @@
         <span class="d-sm-none h1">Menu</span>
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto container">
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Pagina Inicial</a> </li>
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Animais</a> </li>
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#a">Urgência</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/index.html">Pagina Inicial</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html">Animais</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html?urgencia=true">Urgência</a> </li>
             </ul>
 
         </div>
     </nav>
-    <form name="formSignup" class="text-primary form-text needs-validation ml-5 mr-5" method="POST">
-        <div class="form-group">
-            Nome do Bichinho:
-            <input type="text" class="form-control" name="nomeAnimal" placeholder="nome">
-        </div>
-        <div class="form-group">
-            Idade:
-            <input type="text" class="form-control" name="idadeAnimal" placeholder="idade" pattern="[0-9]|?">
-        </div>
-        <div class="form-group">
-            Tipo:
-            <input type="text" class="form-control" name="tipoAnimal" placeholder="gato, cachorro, iguana ou etc.">
-        </div>
-        <div class="form-group">
-            Raça:
-            <input type="text" class="form-control" name="racaAnimal" placeholder="Raça do amigo">
-        </div>
 
-        <div class="form-group">
-            Sexo:<br>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="sexoAnimal" id="machoAnimal" value="Masculino">
-                <label class="form-check-label" for="inlineRadio1">Macho</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="sexoAnimal" id="femeaAnimal" value="Feminino">
-                <label class="form-check-label" for="inlineRadio2">Femea</label>
-            </div>
-        </div>
-        <div class="form-group">
-            Cor:
-            <input type="color" class="form-control" name="corAnimal">
-        </div>
-        <div class="form-group">
-            Situacao:
-            <input type="text" class="form-control" name="situacaoAnimal">
+    <form name="formSignup" class="needs-validation container"  novalidate enctype="multipart/form-data">
+        <h1>Cadastro de Animal</h1>
+        <div class="form-row">
+                <div class="form-group col-md-8">
+                        Nome do Bischinho:
+                        <input type="text" class="form-control" name="nomeAnimal" placeholder="Nome" required>
+                        <div class="invalid-feedback">
+                                Por favor, informe uma cidade válida.
+                              </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        Idade:
+                        <input type="number" class="form-control" name="idadeAnimal" placeholder="Idade em anos" required>
+                    </div>
+                    <div class="form-group col-md-6" id="tipoAnimal">
+      
+                    </div>
+                    <div class="form-group col-md-6">
+                        Raça:
+                        <input type="text" class="form-control" name="racaAnimal" placeholder="Raça do animal">
+                    </div>
+            
+                    <div class="form-group col-md-4">
+                        Sexo:<br>
+                        <select class="custom-select mr-sm-2"name="sexoAnimal">
+                        <option value="estadoInvalido" selected disabled>Selecione o sexo do animal</option>
+                          <option value="M">Macho</option>
+                          <option value="F">Femea</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        Cor:
+                        <input type="text" class="form-control" name="corAnimal">
+                    </div>
+                    <div class="form-group col-md-4">
+                        Situacao:
+                                               <select class="custom-select mr-sm-2"name="situacaoAnimal">
+                        <option value="estadoInvalido" selected disabled>Selecione a situação do animal</option>
+                          <option value="true">Urgente</option>
+                          <option value="false">Não Urgente</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        Descrição
+                            <textarea placeholder="Digite a descrição do animal" class="form-control"  name="descricao" required maxlength="700"></textarea>
+                    </div>
+                    <div class="form-group col-md-12" >
+                        Upload de Foto
+                        <div id="fotosAba">
+                                <input type="file" name="fotos0" class="form-control-file" accept="image/*" >
+                        </div>
+                        <button type="button" class="btn btn-success" onclick="foto();">Carregar foto</button>
+                           
+                        </div>
+                      
         </div>
         <button type="button" class="btn btn-success" onclick="cadastraAnimal();">Cadastrar amigo</button>
     </form>

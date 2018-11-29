@@ -1,4 +1,11 @@
 
+body{
+    font-family: 'Roboto', sans-serif;
+    min-height: 100%;
+}
+
+
+
 .sizeBoxLogin{
     margin: auto;
     width: 540px;
@@ -12,9 +19,6 @@
 }
 
 
-body{
-    font-family: 'Roboto', sans-serif;
-}
 h2{
     font-size: 2.1em;
 }
@@ -30,7 +34,25 @@ a:hover{
     padding-bottom: 5px;
 
 }
+.amareloBG{
+    background-color: #fdcd56;
+    
+}
+.azulBG{
+    background-color: #79bfed;
+    
+}
+.vermelhoBG{
+    background-color: #d25561;
+    
+}
+.verdeBG{
+    background-color: #afd265;
+    
+}
 
+    
+    
 .menuButton{
     background-color: transparent;
     color: black;
@@ -154,6 +176,16 @@ button:hover .heart{
     color: #ec2f42;
 
 }
+.botaoBottom{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
 
 .tipoCachorro{
     background-color: #d25561;
@@ -281,3 +313,223 @@ a:hover.tipoCategoria{
 }
 
 
+/* painel de admin */
+
+.menuAdmin{
+    width: 100%;
+    background-color: #fdcd56;
+    border-bottom: 1px solid #bc973b;
+    padding: 10px;
+
+
+}
+
+.boxNotificacao{
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+
+    margin: 5px;
+    color: white;
+}
+.numeroBox{
+
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.20);
+    margin-left: 5px;
+    font-size:30px;  
+}
+.menuAdminLink{
+   color: #818181;
+    padding: 5px 5px;
+    border-bottom: 1px solid #818181;
+    display: block;
+     width: 100%;
+     -webkit-transition:all  ease-out 200ms;
+     transition:all  ease-out 200ms;
+    
+}
+.menuAdminLink:hover{
+    padding-left: 20px;
+
+    -webkit-transition:all  ease-out 200ms;
+    transition:all  ease-out 200ms;
+
+}
+#conteudoNavbarSuportado2{
+    margin-right: 10px;
+    padding: 5px;
+        -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    
+}
+.sidebarAdmin{
+    background-color: #292929;
+    padding: 10px;
+    color: white;
+    height: 100%;
+}
+
+#adminBarBV{
+    float: right;
+    margin-right: 10px;
+}
+#conteudoAdmin{
+    padding: 10px;
+
+}
+
+
+/* imagem grande*/
+#telaImgGrande{
+    background-color: #2929296c;
+    height: 100%;;
+    width: 100%;
+    position: fixed;
+    z-index: 150;
+    top: 0px;
+    bottom: 0px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.botaoClose{
+    background-color: #fdcd56;
+    position: absolute;
+    padding: 10px;
+    color: white;
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+.botaoClose:hover{
+    background-color: white;;
+    color: #fdcd56;
+
+}
+.boxTelaImg{
+    text-align: center;
+
+}
+#telaImgGrande img{
+    max-width: 90%;
+    max-height: 90%;
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* comentarios */
+.comentarioSrc{
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    background-color: rgb(236, 236, 236);
+    padding: 10px;
+    border: 1px solid rgb(185, 185, 185);
+
+}
+.comentarioSrc #comentarioSrcTexto{
+    border-left: 1px solid rgb(148, 148, 148);
+    height: 100%;
+    padding-left: 10px;
+
+}
+#comentarioImg{
+    height: 100%;
+
+}
+
+/* lista */
+
+
+#sidebarCategoria{
+    background-color: #fdcd56;    
+    -webkit-transition: all  ease-out 300ms;
+    transition: all  ease-out 300ms;
+    height: 100%;
+    padding: 10px;
+    margin: 0 20px;
+    -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border:  1px solid #f0c455;
+}
+.itemCat{
+    border-bottom: 1px solid #a3863b;
+    margin-bottom: 10px;
+}
+
+.textoCheck {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.textoCheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+}
+
+/* On mouse-over, add a grey background color */
+.textoCheck:hover input ~ .checkmark {
+    background-color: #f7f7f7;
+}
+
+/* When the checkbox is checked, add a blue background */
+.textoCheck input:checked ~ .checkmark {
+    background-color: #1a1a1a;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.textoCheck input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.textoCheck .checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+
+
+@media screen and (max-width: 480px){
+
+}

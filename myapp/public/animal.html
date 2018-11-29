@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/header.js"></script>
+    <script src="javascripts/animal.js"></script>
+
+    <title>Buddy - Adote um companheiro</title>
+</head>
+
+<body>
+    <div id="telaImgGrande"> 
+        <div class="boxTelaImg">
+               <a href="#" onclick="esconderTela();"><i class="fas fa-times botaoClose"></i> </a>
+                <img id="telaImgGrandeImagem" class=" img-fluid">;
+        </div>
+    </div>
+   <header class="container-fluid topo">
+        <nav class="container nav">
+            <a href="/index.html"><img src="images/logo.png" class="mx-auto my-2 m-md-3 "></a>
+            <div class="row align-items-center w-75 mx-auto ">
+                <div class="col-12 col-md-8 p-0">
+                    <form title="buscar">
+                        <div class="input-group">
+                            <input type="text" class="form-control rounded-0 classOutline" placeholder="Pesquisar">
+                            <div class="input-group-append">
+                                <button class="input-group-text rounded-0 btn-light"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-12 col-md-4 text-white text-center text-md-left" id="loginBar">
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="navbar-expand-sm corAmarelo">
+        <button class="d-sm-none menuButton fas fa-bars" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação"></button>
+        <span class="d-sm-none h1">Menu</span>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto container">
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/index.html">Pagina Inicial</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html">Animais</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html?urgencia=true">Urgência</a> </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <section class="mt-3" id="animalSingle">
+
+        </section>
+
+        <section class="mt-5">
+            <h2 class="float-left d-block mt-2">Comentarios</h2>
+            <div class=" clearfix"></div>
+
+            <div class="row no-gutters comentarioSrc">
+                <div class="col-md-1 col-2" id="comentarioImg">
+                   <a href="#" onclick="imgGrande('teste');"> <img src="./images/profile.jpg" class=" img-fluid rounded-circle border border-dark w-75"></a>
+                </div>
+                <div class="col-md-11 col-10">
+                    <div id="comentarioSrcTexto">
+                        <b>Nome Usuario</b>
+                        <p>Non nulla elit diam fames eu facilisis hendrerit vehicula lorem, aptent at maecenas ultrices primis vehicula libero tempor, id luctus maecenas lacinia congue a vulputate fusce. auctor donec integer elit aliquet malesuada nullam etiam tempor ad lobortis vulputate duis sapien, leo facilisis ac</p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="mt-5">
+            <h2 class="float-left d-block mt-2">Voce tambem pode gostar</h2>
+            <a href="#" class="tipoCategoria float-right">Todos Animais</a>
+            <div class=" clearfix"></div>
+            <div class="row no-gutters mt-2">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#">
+                        <div class="animalBox">
+                            <img src="images/pp.jpg">
+                            <div class="animalBoxTexto">
+                                <b>Sexo: </b><span>Femea</span><br>
+                                <b>Idade: </b><span>80 anos</span><br>
+                                <span class="tipoCategoria tipoCachorro">Cachorro</span>
+                                <span class="tipoCategoria tipoUrgente">Urgente</span>
+                                <span class="tipoCategoria float-right">+</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#">
+                        <div class="animalBox">
+                            <img src="images/pp.jpg">
+                            <div class="animalBoxTexto">
+                                <b>Sexo: </b><span>Femea</span><br>
+                                <b>Idade: </b><span>80 anos</span><br>
+                                <span class="tipoCategoria tipoGato">Gato</span>
+                                <span class="tipoCategoria float-right">+</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#">
+                        <div class="animalBox">
+                            <img src="images/pp.jpg">
+                            <div class="animalBoxTexto">
+                                <b>Sexo: </b><span>Femea</span><br>
+                                <b>Idade: </b><span>80 anos</span><br>
+                                <span class="tipoCategoria tipoAves">Aves</span>
+                                <span class="tipoCategoria tipoUrgente">Urgente</span>
+                                <span class="tipoCategoria float-right">+</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#">
+                        <div class="animalBox">
+                            <img src="images/pp.jpg">
+                            <div class="animalBoxTexto">
+                                <b>Sexo: </b><span>Femea</span><br>
+                                <b>Idade: </b><span>80 anos</span><br>
+                                <span class="tipoCategoria tipoOutros">Outros</span>
+                                <span class="tipoCategoria float-right">+</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#">
+                        <div class="animalBox">
+                            <img src="images/pp.jpg">
+                            <div class="animalBoxTexto">
+                                <b>Sexo: </b><span>Femea</span><br>
+                                <b>Idade: </b><span>80 anos</span><br>
+                                <span class="tipoCategoria tipoOutros">Outros</span>
+                                <span class="tipoCategoria float-right">+</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <a href="#">
+                        <div class="animalBox">
+                            <img src="images/pp.jpg">
+                            <div class="animalBoxTexto">
+                                <b>Sexo: </b><span>Femea</span><br>
+                                <b>Idade: </b><span>80 anos</span><br>
+                                <span class="tipoCategoria tipoCachorro">Cachorro</span>
+                                <span class="tipoCategoria float-right">+</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+    </section>
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            2018
+        </div>
+
+    </footer>
+
+    <!-- JavaScript (Opcional) -->
+
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+
+</body>
+
+</html>

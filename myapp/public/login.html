@@ -2,7 +2,6 @@
 <html lang="pt-br">
 
 <head>
-    <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,13 +16,13 @@
     <script src="javascripts/login.js"></script>
 
 
-    <title>Login</title>
+    <title>Buddy - Login</title>
 </head>
 
 <body>
-    <header class="container-fluid topo">
+  <header class="container-fluid topo">
         <nav class="container nav">
-            <img src="images/logo.png" class="mx-auto my-2 m-md-3 ">
+            <a href="/index.html"><img src="images/logo.png" class="mx-auto my-2 m-md-3 "></a>
             <div class="row align-items-center w-75 mx-auto ">
                 <div class="col-12 col-md-8 p-0">
                     <form title="buscar">
@@ -36,9 +35,7 @@
 
                     </form>
                 </div>
-                <div class="col-12 col-md-4 text-white text-center text-md-left">
-
-                </div>
+ 
             </div>
         </nav>
     </header>
@@ -48,13 +45,14 @@
         <span class="d-sm-none h1">Menu</span>
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto container">
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Pagina Inicial</a> </li>
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Animais</a> </li>
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#a">Urgência</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/index.html">Pagina Inicial</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html">Animais</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html?urgencia=true">Urgência</a> </li>
             </ul>
 
         </div>
     </nav>
+
     <div class="container center">
 
                 <div class="alert alert-dismissible alertaCorpo fade close" id="alertaLogin">

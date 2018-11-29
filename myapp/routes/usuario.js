@@ -1,6 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'sitebuddy.mail@gmail.com',
+    pass: 'jarubrocha'
+  }
+});
+
+
 /*-------------------------------------------------------
                     CADASTRO
 --------------------------------------------------------*/
@@ -26,9 +37,21 @@ router.post('/cadastraUsuario', function (req, res, next) {
                                 console.log("Erro ao cadastrar o usuario!!!!");
                             }
                             else {
-
-                                res.json({ status: 'OK', data: 'Incluido com sucesso!' });
-                                console.log("Usuario inserido com sucesso!!!");
+                                var mailOptions = {
+                                    from: 'sitebuddy.mail@gmail.com',
+                                    to: input.email,
+                                    subject: 'Cadastro no BUDDY!!!!!',
+                                    text: 'Óla, ' + input.nome +'!!!!\n Bem vindo ao buddy '
+                                  };
+                                  transporter.sendMail(mailOptions, function(error, info){
+                                    if (error) {
+                                      console.log(error);
+                                    } else {
+                                      console.log('Email sent: ' + info.response);
+                                    }
+                                  });
+                                  res.json({ status: 'OK', data: 'Incluido com sucesso!' });
+                                  console.log("Usuario inserido com sucesso!!!");
                             }
                         });
                     }
@@ -48,7 +71,7 @@ router.post('/cadastraUsuario', function (req, res, next) {
                     LOGIN
 --------------------------------------------*/
 router.post('/login', function (req, res, next) {
-    console.log("test2e");
+    console.log("teste");
     var input = req.body;
     console.log(input);
     req.getConnection(function (err, connection) {
@@ -67,10 +90,10 @@ router.post('/login', function (req, res, next) {
                     });
                 }
                 else {
-                    console.log("kkk");
+                    console.log(rows[0]);
                     req.session.logado = true;
                     req.session.admin = true;
-                    req.session.login = input.login;
+                    req.session.login = rows[0].idUsuario;
                     res.json({
                         status: 'OK', data: 'Logado com sucesso!'
                     });
@@ -99,6 +122,10 @@ router.post('/logout', function (req, res, next) {
             res.json({ status: 'OK', data: 'Logout com sucesso!' });
     });
 });
+
+
+
+
 
 /*----------------------------------------------------------*/
 module.exports = router;

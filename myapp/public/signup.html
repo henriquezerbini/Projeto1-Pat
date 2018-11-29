@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SignUp</title>
+    <title>Buddy - Cadastro de Usuario</title>
 
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
     <link href="stylesheets/style.css" rel="stylesheet">
@@ -18,7 +18,6 @@
 
     <script src="javascripts/signupJS.js"></script>
     <script src="javascripts/login.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 <body>
@@ -59,7 +58,7 @@
     </nav>
 
     <div class="sizeBoxSignUp">
-        <form name="formSignup" class="text-primary form-text needs-validation" onsubmit="cadastraUsuario();" method="POST">
+        <form name="formSignup" class="text-primary form-text needs-validation" method="POST">
             <div class="row">
                 <div class="col border-left border-primary">
                     Nome:<br>
@@ -81,7 +80,7 @@
                         required>
                     <input type="checkbox" required>
                     <label class="form-check-label"><small>Aceitar termos de uso.</small></label>
-                    <button type="submit" class="btn btn-success">Cadastrar-se</button>
+                    <button type="button" class="btn btn-success" onclick="cadastraUsuario();">Cadastrar-se</button>
                 </div>
 
                 <div class="col bg-info text-light form-text">

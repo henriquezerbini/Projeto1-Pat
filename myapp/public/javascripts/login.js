@@ -18,7 +18,7 @@ function logar() {
                 $("#alertaLogin").removeClass("close");
             }
             else {
-                window.location.href = '/index.html';
+                window.location.href = '/logado.html';
             }
         }
     });
