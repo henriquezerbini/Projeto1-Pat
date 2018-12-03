@@ -2,7 +2,6 @@
 <html lang="pt-br">
 
 <head>
-    <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -13,28 +12,20 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/header.js"></script>
+    <script src="javascripts/gerais.js"></script>
     <script src="javascripts/script.js"></script>
 
-    <title>Olá, mundo!</title>
+    <title>Buddy - Adote um Companheiro</title>
 </head>
 
 <body>
     <header class="container-fluid topo">
         <nav class="container nav">
-            <img src="images/logo.png" class="mx-auto my-2 m-md-3 ">
-            <div class="row align-items-center w-75 mx-auto ">
-                <div class="col-12 col-md-8 p-0">
-                    <form title="buscar">
-                        <div class="input-group">
-                            <input type="text" class="form-control rounded-0 classOutline" placeholder="Pesquisar">
-                            <div class="input-group-append">
-                                <button class="input-group-text rounded-0 btn-light"><i class="fas fa-search"></i></button>
-                            </div>
-                        </div>
+            <a href="/index.html"><img src="images/logo.png" class="mx-auto my-2 m-md-3 "></a>
+            <div class="row align-items-center ml-2 ">
 
-                    </form>
-                </div>
-                <div class="col-12 col-md-4 text-white text-center text-md-left" id="loginBar">
+                <div class="col-12 text-white " id="loginBar">
                     
                 </div>
             </div>
@@ -46,9 +37,9 @@
         <span class="d-sm-none h1">Menu</span>
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto container">
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Pagina Inicial</a> </li>
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Animais</a> </li>
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#a">Urgência</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/index.html">Pagina Inicial</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html">Animais</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html?urgente=true">Urgência</a> </li>
             </ul>
 
         </div>
@@ -63,15 +54,12 @@
         <div class="carousel-inner">
             <div class="carousel-item active ">
                 <img class="d-block w-100" src="images/img1.jpg" alt="Primeiro Slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <span class="slideTexto">Não compre, <b>adote</b></span>
-                </div>
             </div>
             <div class="carousel-item ">
-                <img class="d-block w-100" src="images/img1.jpg" alt="Segundo Slide">
+                <img class="d-block w-100" src="images/img2.jpg" alt="Segundo Slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="images/img1.jpg" alt="Terceiro Slide">
+                <img class="d-block w-100" src="images/img3.jpg" alt="Terceiro Slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -92,177 +80,18 @@
     <section class="container" id="listaDeAnimais">
         <section class="mt-3">
             <h2 class="float-left d-block">Últimos cadastros</h2>
-            <a href="#" class="tipoCategoria float-right">Todos Animais</a>
+            <a href="lista.html" class="tipoCategoria float-right">Todos Animais</a>
             <div class=" clearfix"></div>
-            <div class="row no-gutters mt-2">
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="animalPagina.html">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoCachorro">Cachorro</span>
-                                <span class="tipoCategoria tipoUrgente">Urgente</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoGato">Gato</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoAves">Aves</span>
-                                <span class="tipoCategoria tipoUrgente">Urgente</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoOutros">Outros</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoOutros">Outros</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoCachorro">Cachorro</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <div class="row no-gutters mt-2" id="ultimosAnimais">
             </div>
         </section>
 
         <section class="mt-3">
             <h2 class="float-left d-block">Urgências</h2>
-            <a href="#" class="tipoCategoria float-right">Todos Animais</a>
+            <a href="lista.html?urgente=true" class="tipoCategoria float-right">Todos Animais</a>
             <div class=" clearfix"></div>
-            <div class="row no-gutters mt-2">
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoCachorro">Cachorro</span>
-                                <span class="tipoCategoria tipoUrgente">Urgente</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoGato">Gato</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoAves">Aves</span>
-                                <span class="tipoCategoria tipoUrgente">Urgente</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoOutros">Outros</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoOutros">Outros</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#">
-                        <div class="animalBox">
-                            <img src="images/pp.jpg">
-                            <div class="animalBoxTexto">
-                                <b>Sexo: </b><span>Femea</span><br>
-                                <b>Idade: </b><span>80 anos</span><br>
-                                <span class="tipoCategoria tipoCachorro">Cachorro</span>
-                                <span class="tipoCategoria float-right">+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <div class="row no-gutters mt-2" id="ultimosUrgentes">
+                
             </div>
         </section>
 
