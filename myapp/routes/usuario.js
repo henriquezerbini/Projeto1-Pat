@@ -83,7 +83,7 @@ router.post('/login', function (req, res, next) {
             }
             else {
                 if (rows[0] === undefined) {
-                    console.log("teste3");
+                    console.log("tese3");
                     res.json({
                         status: 'ERRO',
                         data: 'Dados de login incorretos!'
@@ -91,8 +91,13 @@ router.post('/login', function (req, res, next) {
                 }
                 else {
                     console.log(rows[0]);
-                    req.session.logado = true;
-                    req.session.admin = true;
+                    if(rows[0].privilegio == "Admin"){
+                        req.session.admin = true;
+                    }
+                    else{
+                        req.session.admin = false;
+                    }
+                    req.session.logado = true;                  
                     req.session.login = rows[0].idUsuario;
                     res.json({
                         status: 'OK', data: 'Logado com sucesso!'
@@ -107,9 +112,22 @@ router.post('/login', function (req, res, next) {
 
 router.get('/logado', function (req, res, next) {
     if (req.session.logado) {
-        res.json({ status: 'OK', data: req.session.login });
+        /*
+        req.getConnection(function (err, connection) {
+            connection.query("SELECT user FROM usuario WHERE idUsuario = ? ",req.session.login, function (err, rows) {
+                if (err) {
+                    res.json({ status: 'ERRO', data: + err });
+                }
+                else {
+                        res.json({status: 'OK', data: rows});
+                    }               
+            });
+        });*/
+        res.json({status: 'OK', data: req.session.login});
+       
     }
     else {
+        
         res.json({ status: 'SEMACESSO', data: 'Usuário precisa estar logado!' });
     }
 });
@@ -124,6 +142,115 @@ router.post('/logout', function (req, res, next) {
 });
 
 
+router.get('/qtdsIntencoes', function (req, res, next) {
+    var qtd1, qtd2, qtd3
+    req.getConnection(function (err, connection) {
+        connection.query("SELECT COUNT(animal_idAnimal) as qtd FROM intencaoAdocao WHERE usuario_idUsuario = ? AND situacaoAdocao = 'E' ",req.session.login, function (err, rows) {
+            if (err) {
+                res.json({ status: 'ERRO', data: + err });
+            }
+            else {
+                if (rows[0] === undefined) {
+                   qtd1 =-1
+                }
+                else {
+                    qtd1 =   rows[0].qtd;
+                }
+                connection.query("SELECT COUNT(animal_idAnimal) as qtd FROM intencaoAdocao WHERE usuario_idUsuario = ? AND situacaoAdocao = 'A'",req.session.login, function (err, rows2) {
+                    if (err) {
+                        //console.log(err);
+                        res.json({ status: 'ERRO', data: + err });
+                    }
+                    else {
+                        if (rows2[0] === undefined) {
+                            qtd2 = -1
+                        }
+                        else {
+                            qtd2 =   rows2[0].qtd;
+                        }
+                        connection.query("SELECT COUNT(animal_idAnimal) as qtd FROM intencaoAdocao, animal WHERE idAnimal = animal_idAnimal AND animal.usuario_idUsuario = ? AND situacaoAdocao = 'E'",req.session.login, function (err, rows3) {
+                            if (err) {
+                                //console.log(err);
+                                res.json({ status: 'ERRO', data: + err });
+                            }
+                            else {
+                                if (rows3[0] === undefined) {
+                                    qtd3 = -1
+                                }
+                                else {
+                                    //console.log(rows);
+                                    qtd3 =   rows3[0].qtd;
+                                }
+                                res.json({ status: 'OK', qtd1:  qtd1, qtd2:qtd2, qtd3:qtd3 });
+                            }
+                        });
+                    }
+
+                });
+
+            }
+        });
+    });
+
+});
+
+
+
+router.get('/listaIntencoesFeitas', function (req, res, next) {
+    var situacao = req.query.situacao
+    if(situacao == undefined){
+        situacao = "";
+    }
+    else{
+        situacao = "AND situacaoAdocao = '" + situacao + "'";
+    }
+    req.getConnection(function (err, connection) {
+        connection.query("SELECT * FROM animal, imagemAnimal, intencaoAdocao WHERE idAnimal = imagemAnimal.animal_idAnimal AND idAnimal = intencaoAdocao.animal_idAnimal AND intencaoAdocao.usuario_idUsuario = ? "+ situacao + " GROUP BY idAnimal ORDER BY dataDeCadastro DESC ",req.session.login, function (err, rows) {
+            if (err) {
+                console.log(err);
+                res.json({ status: 'ERROR', data: + err });
+            }
+            else {
+                if (rows[0] === undefined) {
+                    res.json({status: 'ERROR',data: "Nenhuma Intenção Feita" });
+                }
+                else {
+                    //console.log(rows);
+                    res.json({status: 'OK', data: rows});
+                }
+            }
+        });
+    });
+});
+
+
+
+router.get('/listaIntencoesRecebidas', function (req, res, next) {
+    var situacao = req.query.situacao
+    if(situacao == undefined){
+        situacao = "";
+    }
+    else{
+        situacao = "AND situacaoAdocao = '" + situacao + "'";
+    }
+    req.getConnection(function (err, connection) {
+        connection.query("SELECT * FROM animal, imagemAnimal, intencaoAdocao WHERE idAnimal = imagemAnimal.animal_idAnimal AND idAnimal = intencaoAdocao.animal_idAnimal AND animal.usuario_idUsuario = ? "+ situacao + " GROUP BY idAnimal ORDER BY dataDeCadastro DESC ",req.session.login, function (err, rows) {
+            if (err) {
+                console.log(err);
+                res.json({ status: 'ERROR', data: + err });
+            }
+            else {
+                if (rows[0] === undefined) {
+                    res.json({status: 'ERROR',data: "Nenhuma Intenção Feita" });
+                }
+                else {
+                    //console.log(rows);
+                    res.json({status: 'OK', data: rows});
+                }
+            }
+        });
+    });
+});
 
 
 
