@@ -43,12 +43,12 @@ app.use(
   connection(mysql, {
     host: 'sql10.freemysqlhosting.net'
     , //servidor do banco mysql, se for local: localhost,
-    user: 'sql10263389'
+    user: 'sql10268154'
     , //usuario com permissao de conexao a base de dados
-    password: 'wRimM2EhX3'
+    password: '8emjZraSTD'
     , //senha de acesso ao banco
     port: 3306, //porta do mysql, normalmente 3306
-    database: 'sql10263389' //nome da base de dados (esquema)
+    database: 'sql10268154' //nome da base de dados (esquema)
   }, 'pool')
 );
 /*----------------------------------------------------------------
@@ -59,6 +59,8 @@ app.use('/animal', animalRouter);
 
 var usuarioRouter = require('./routes/usuario');
 app.use('/usuario', usuarioRouter);
+
+
 
 /*--------------------------------------------------------------*/
 // catch 404 and forward to error handler
@@ -76,5 +78,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 /*---------------------------------------------------------------*/
 module.exports = app;
