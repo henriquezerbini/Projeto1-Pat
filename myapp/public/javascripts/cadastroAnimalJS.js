@@ -1,17 +1,6 @@
 
 $(document).ready(function () {
-    $.ajax({
-        url: '/usuario/logado',
-        dataType: 'json',
-        error: function (dados) {
-            alert('Erro: ' + dados.data);
-        },
-        success: function (dados) {
-            if (dados.status === 'SEMACESSO') {
-                window.location.href = '/index.html';
-            }
-        }
-    });
+    verificaAcesso();
 
 
     $.ajax({
@@ -36,7 +25,7 @@ $(document).ready(function () {
                     '<option value="estadoInvalido" selected disabled>Selecione o tipo do animal</option>"'
 
                 for (i = 0; i < dados.data.length; i++) {
-                    conteudoHtml = conteudoHtml + '<option value="' + dados.data[i].nomeTipo + '">' + dados.data[i].nomeTipo + '</option>'
+                    conteudoHtml = conteudoHtml + '<option value="' + dados.data[i].nomeTipo + '">' + primeiraMaiuscula(dados.data[i].nomeTipo) + '</option>'
                 }
                 conteudoHtml = conteudoHtml + '</select>';
                 conteudo.innerHTML =  conteudoHtml;
@@ -51,9 +40,6 @@ $(document).ready(function () {
 
 
 });
-
-
-
 
 
 
@@ -108,7 +94,7 @@ function cadastraAnimal() {
     dadosReq.append("descricao", formPost.descricao.value);
 
 
-
+formPost.reset();
  
   
     $.ajax({
