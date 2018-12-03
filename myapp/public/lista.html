@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/header.js"></script>
+    <script src="javascripts/gerais.js"></script>
+    <script src="javascripts/lista.js"></script>
+
+
+    <title>Buddy - Todos Animais</title>
+</head>
+
+<body>
+
+    <header class="container-fluid topo">
+        <nav class="container nav">
+            <a href="/index.html"><img src="images/logo.png" class="mx-auto my-2 m-md-3 "></a>
+            <div class="row align-items-center ml-2 ">
+
+                <div class="col-12 text-white " id="loginBar">
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    <nav class="navbar-expand-sm corAmarelo">
+        <button class="d-sm-none menuButton fas fa-bars" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação"></button>
+        <span class="d-sm-none h1">Menu</span>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto container">
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/index.html">Pagina Inicial</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html">Animais</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html?urgente=true">Urgência</a> </li>
+            </ul>
+
+        </div>
+    </nav>
+    
+    <section class=" container">
+        <div class="row no-gutters mt-2">
+            <div class="col-md-3 col-12 ">
+                <nav class="navbar-expand-md " id="sidebarCategoria">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado2"
+                        aria-controls="conteudoNavbarSuportado2" aria-expanded="false" aria-label="Alterna navegação">
+                        <span class="navbar-toggler-icon"><i class="fas fa-paw mr-1"></i></span>
+                    </button>
+                    <span class="h4">Filtros de Pesquisa</span>
+                    <div class="collapse navbar-collapse " id="conteudoNavbarSuportado2">
+                        <form name="pesquisar" class="w-100" >
+                            <ul class="nav flex-column  itemCat">
+                                <li class="nav-item ">Sexo: </li>
+                                <label class="textoCheck">Macho<input type="checkbox" name="sexo" value="M"><span
+                                        class="checkmark"></span>
+                                </label>
+                                <label class="textoCheck">Femea<input type="checkbox" name="sexo" value="F"><span
+                                        class="checkmark"></span>
+                                </label>
+                            </ul>
+                            <ul class="nav flex-column  itemCat">
+                                <li class="nav-item" id="tipoAnimalCat">Tipo: </li>
+     
+                            </ul>
+
+                            <ul class="nav flex-column  itemCat">
+                                <li class="nav-item ">Estado: </li>
+                                <select class="form-control" name="estado" placeholder="estado" required>
+                                    <option value="todos">Todos</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </ul>
+
+                            <ul class="nav flex-column  itemCat">
+                                    <li class="nav-item ">Urgente: </li>
+                                    <label class="textoCheck">Urgencia<input type="checkbox" name="urgente" value="true"><span
+                                            class="checkmark"></span>
+                                    </label>
+                                </ul>
+                            <button type="submit" class="botaoPesquisar" >Pesquisar</button>
+                        </form>
+                    </div>
+
+                </nav>
+
+
+            </div>
+            <div class="col-md-9 col-12" >
+                <section>
+                    <div class="row no-gutters" id="animaisLista">
+                    </div>
+
+                    <div>
+                            <nav >
+                                    <ul class="pagination pagination-lg" id="paginacao">
+                                     
+                                    </ul>
+                                  </nav>
+                       </div>
+                </section>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            2018
+        </div>
+
+    </footer>
+
+    <!-- JavaScript (Opcional) -->
+
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+
+</body>
+
+</html>

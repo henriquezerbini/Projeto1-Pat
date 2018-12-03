@@ -13,19 +13,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/header.js"></script>
-    <script src="javascripts/gerais.js"></script>
-    <script src="javascripts/animal.js"></script>
+    <script src="javascripts/script.js"></script>
 
-    <title>Buddy - Adote um companheiro</title>
+    <title>Buddy - Adote um Companheiro</title>
 </head>
 
 <body>
-    <div id="telaImgGrande">
-        <div class="boxTelaImg">
-            <a href="#" onclick="esconderTela();"><i class="fas fa-times botaoClose"></i> </a>
-            <img id="telaImgGrandeImagem" class=" img-fluid">;
-        </div>
-    </div>
     <header class="container-fluid topo">
         <nav class="container nav">
             <a href="/index.html"><img src="images/logo.png" class="mx-auto my-2 m-md-3 "></a>
@@ -56,47 +49,21 @@
 
 
 
-
-
-    <section class="container">
-        <section id="intencaoAceita">
-        </section>
-        <section class="mt-3" id="animalSingle">
-
-        </section>
-
-      
-        <section class="mt-5">
-            <h2 class="float-left d-block mt-2">Comentarios</h2>
-            <div class=" clearfix"></div>
-            <form name="formComentario" method="POST">
-                <div class="row no-gutters">
-                    <div class="col-md-1 col-2" id="comentarioImg">
-                        <a href="#" onclick="imgGrande('teste');"> <img src="./images/profile.jpg" class=" img-fluid rounded-circle border border-dark w-75"></a>
-                    </div>
-                    <div class="col-md-11 col-8">
-                        <textarea class="form-control" placeholder="Adicionar um comentario publico" name="comentarioEnviar"
-                            required maxlength="200"></textarea>
-                    </div>
-                </div>
-                <br>
-                 <button type="button" class="btn btn-success" onclick="novoComentario();">Comentar</button>
-                 <br>
-                <hr/>
-            </form>
-            <div id="perguntas">
-
-            </div>
-
-        </section>
-
-
-
-        <section class="mt-5">
-            <h2 class="float-left d-block mt-2">Voce tambem pode gostar</h2>
+    <section class="container" id="listaDeAnimais">
+        <section class="mt-3">
+            <h2 class="float-left d-block">Últimos cadastros</h2>
             <a href="lista.html" class="tipoCategoria float-right">Todos Animais</a>
             <div class=" clearfix"></div>
-            <div class="row no-gutters mt-2" id="vocePostaGostar">
+            <div class="row no-gutters mt-2" id="ultimosAnimais">
+            </div>
+        </section>
+
+        <section class="mt-3">
+            <h2 class="float-left d-block">Urgências</h2>
+            <a href="lista.html?urgente=true" class="tipoCategoria float-right">Todos Animais</a>
+            <div class=" clearfix"></div>
+            <div class="row no-gutters mt-2" id="ultimosUrgentes">
+                
             </div>
         </section>
 

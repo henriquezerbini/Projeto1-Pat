@@ -21,41 +21,31 @@
 </head>
 
 <body>
-    <header class="container-fluid topo">
+<header class="container-fluid topo">
         <nav class="container nav">
-            <img src="images/logo.png" class="mx-auto my-2 m-md-3 ">
-            <div class="row align-items-center w-75 mx-auto ">
-                <div class="col-12 col-md-8 p-0">
-                    <form title="buscar">
-                        <div class="input-group">
-                            <input type="text" class="form-control rounded-0 classOutline" placeholder="Pesquisar">
-                            <div class="input-group-append">
-                                <button class="input-group-text rounded-0 btn-light"><i class="fas fa-search"></i></button>
-                            </div>
-                        </div>
+            <a href="/index.html"><img src="images/logo.png" class="mx-auto my-2 m-md-3 "></a>
+            <div class="row align-items-center ml-2 ">
 
-                    </form>
-                </div>
-                <div class="col-12 col-md-4 text-white text-center text-md-left">
-                    <a href="#" class="text-white">Login</a> | <a href="#" class="text-white">Cadastro</a>
+                <div class="col-12 text-white " id="loginBar">
+                    
                 </div>
             </div>
         </nav>
     </header>
-
     <nav class="navbar-expand-sm corAmarelo">
         <button class="d-sm-none menuButton fas fa-bars" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
             aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação"></button>
         <span class="d-sm-none h1">Menu</span>
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto container">
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Pagina Inicial</a> </li>
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#">Animais</a> </li>
-                <li class="nav-item linkMenu my-sm-0 my-2"><a href="#a">Urgência</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/index.html">Pagina Inicial</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html">Animais</a> </li>
+                <li class="nav-item linkMenu my-sm-0 my-2"><a href="/lista.html?urgente=true">Urgência</a> </li>
             </ul>
 
         </div>
     </nav>
+
 
     <div class="sizeBoxSignUp">
         <form name="formSignup" class="text-primary form-text needs-validation" method="POST">

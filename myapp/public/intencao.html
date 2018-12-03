@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/gerais.js"></script>
+    <script src="javascripts/intencao.js"></script>
+
+
+
+    <title>Buddy - Meu Perfil</title>
+</head>
+
+<body>
+ <section class="">
+       <nav class="menuAdmin">
+            <button class="menuButton fas fa-bars" type="button" onclick="showMenu();"></button>
+            <a href="/index.html"><img src="images/logo.png" class="ml-2" height="30px;"></a>
+            <div id="adminBarBV">
+                Bem vindo 
+                <img src="images/profile.jpg" class="rounded-circle border border-dark" height="30px;">
+            </div>
+     
+       </nav>
+        <section>
+            <div class="row no-gutters">
+                <div class="col-md-3 col-12 " id="menuAdmin">
+                     <nav class="navbar-expand-md sidebarAdmin ">
+              <span class="h4">Configurações</span>
+                <div class="" id="conteudoNavbarSuportado2">
+                    <ul class="nav flex-column w-100">
+                        <a href="/logado.html"><li class="nav-item menuAdminLink">Minha Conta </li></a>
+                        <a href="/cadastroAnimal.html"><li class="nav-item menuAdminLink">Cadastrar Animal </li></a>
+                        <a id="animaisCad" href="#"><li class="nav-item menuAdminLink">Animais Cadastrados </li></a>
+                        <a href="/intencao.html?recebidas"> <li class="nav-item menuAdminLink">Intenções de Adoções Recebidas</li></a>
+                       <a href="/intencao.html?feitas"> <li class="nav-item menuAdminLink">Intenções de Adoções Feitas</li></a> 
+                       <a href="/intencao.html?feitasAprovadas"> <li class="nav-item menuAdminLink">Adoções Feitas Aprovadas</li></a> 
+                       <a href="/intencao.html?feitasReprovadas"> <li class="nav-item menuAdminLink">Adoções Feitas Reprovadas</li></a> 
+                       <a href="#" onclick="logoutJS();"> <li class="nav-item menuAdminLink">Logout</li></a> 
+                    </ul>
+
+                </div>
+            </nav>
+        
+                </div>
+                <div class="col-md-9 col-12" id="conteudoAdmin">
+                   <h4 id="tituloPagina"></h4>
+                   <section class="mt-3">
+                    <div class="row no-gutters mt-2" id="ultimosAnimais">
+                       
+                    </div>
+                </section>
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    <footer class="footer">
+        <div class="container">
+            2018
+        </div>
+
+    </footer>
+
+    <!-- JavaScript (Opcional) -->
+
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+
+</body>
+
+</html>

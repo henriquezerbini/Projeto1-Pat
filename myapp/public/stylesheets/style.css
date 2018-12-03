@@ -281,6 +281,25 @@ a:hover.tipoCategoria{
     margin: 5px;
     color: #e3342f;
     border: 1px solid #e3342f;
+    -webkit-transition:all  ease-out 300ms;
+    transition:all  ease-out 300ms;
+    outline:none;
+
+}
+.okCorpo{
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background-color: #f0fdd4;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    color: #718841;
+    border: 1px solid #afd265;
+    -webkit-transition:all  ease-out 300ms;
+    transition:all  ease-out 300ms;
+    outline:none;
+    
 
 }
 .alertaCorpo span{
@@ -293,14 +312,22 @@ a:hover.tipoCategoria{
     padding: 3px 5px;
 
 }
-.alertaCorpo button{
+.alertaCorpo button, .okCorpo button{
     background-color: transparent;
     outline:none;
     border: 0;
+    
 }
-.alertaCorpo button:hover{
-
-    cursor: pointer
+button.alertaCorpo,  button.okCorpo{
+    outline:none;
+}
+.alertaCorpo button:hover, button:hover.alertaCorpo, .okCorpo button:hover, button:hover.okCorpo{
+    outline:none;
+    cursor: pointer;
+    -webkit-filter: brightness(110%);
+    filter: brightness(110%);
+    -webkit-transition:all  ease-out 300ms;
+    transition:all  ease-out 300ms;
 }
 
 .fecharAlerta{
@@ -311,6 +338,8 @@ a:hover.tipoCategoria{
 .center{
     text-align: center;
 }
+
+
 
 
 /* painel de admin */
@@ -378,12 +407,20 @@ a:hover.tipoCategoria{
     padding: 10px;
 
 }
-
+.situacaoAnimal{
+    display: inline-block;
+    position: relative;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+}
+#loginBar{
+    text-align: right;
+}
 
 /* imagem grande*/
 #telaImgGrande{
-    background-color: #2929296c;
-    height: 100%;;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
     width: 100%;
     position: fixed;
     z-index: 150;
@@ -418,9 +455,21 @@ a:hover.tipoCategoria{
     -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 }
+.alertaIntencao{
+    margin-top: 10px;
+    padding: 20px;
+    background-color: whitesmoke;
+    color: #1a1a1a;
+    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+.alertaIntencao h2{
+    margin: 0px;
+    padding: 0px;
+}
 
 
-/* comentarios */
+/* comentarios e pagina unica */
 .comentarioSrc{
     -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
